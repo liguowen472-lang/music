@@ -78,7 +78,7 @@ main{max-width:1200px;margin:0 auto;padding:0 32px;min-height:calc(100vh - 64px)
 .hole{position:absolute;left:50%;top:50%;width:10px;height:10px;margin:-5px;border-radius:50%;background:var(--bg);z-index:3}
 .disclabel{position:absolute;left:50%;top:60%;transform:translate(-50%,0);z-index:2;text-align:center;pointer-events:none;width:30%}
 .disclabel span{display:block;font:600 11px/1.25 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.25);margin-top:0}
-.ring{position:absolute;inset:-12px;transform:rotate(-90deg);pointer-events:none}
+.ring{position:absolute;left:-12px;top:-12px;width:calc(100% + 24px);height:calc(100% + 24px);display:block;overflow:visible;transform:rotate(-90deg);pointer-events:none}
 .ring circle{fill:none;stroke-width:3;stroke-linecap:round}
 .arm{position:absolute;right:-8%;top:-4%;width:14%;height:70%;transform-origin:50% 8%;transform:rotate(-26deg);transition:transform .45s cubic-bezier(.5,0,.2,1);z-index:4}
 .arm .pivot{position:absolute;left:50%;top:0;width:34px;height:34px;margin-left:-17px;border-radius:50%;background:var(--card);border:1px solid var(--line);box-shadow:0 4px 10px rgba(0,0,0,.08)}
@@ -244,7 +244,8 @@ main{max-width:1200px;margin:0 auto;padding:0 32px;min-height:calc(100vh - 64px)
 .disc .art{inset:29%;overflow:hidden}
 .disc .art::after{content:"";position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,rgba(255,255,255,.18),transparent 25%,rgba(0,0,0,.08) 50%,transparent 75%,rgba(255,255,255,.18))}
 .playing .disc .art,.spinart .disc .art{animation:spin 6s linear infinite}
-.platter{position:absolute;inset:-5%;border-radius:50%;background:#E9E5DE;box-shadow:inset 0 0 0 1px var(--line)}
+.platter{position:absolute;inset:-5%;border-radius:50%;background:#E9E5DE;box-shadow:inset 0 0 0 1px var(--line),0 22px 44px -20px rgba(43,42,40,.35)}
+.disc{box-shadow:0 0 0 1px rgba(0,0,0,.06)}
 .disclabel{top:calc(50% + 12px);transform:translate(-50%,0);width:auto;white-space:nowrap}
 .disclabel span{font-size:11px;letter-spacing:.14em;margin-top:0;color:#fff}
 .hasart .disclabel{display:none}
