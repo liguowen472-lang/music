@@ -11,6 +11,7 @@
   --bg:#F4F1EC; --card:#FBFAF7; --ink:#2B2A28; --muted:#77736D; --line:#E2DDD5; --faint:#ECE8E1;
   --stress:#C29F8B; --traits:#A39FB6; --now:#9AAEB8; --fb:#C9B697;
   --silence:#A9A49D; --calm:#9DB09A; --piano:#C7A6A3; --flow:#7F9E9A; --canvas:#C6AE7B;
+  --c-light:#9DB09A; --c-classical:#C7A6A3; --c-jazz:#8C9CB8; --c-guofeng:#B88E70; --c-folk:#C6AE7B; --c-pop:#D39A8C; --c-electronic:#9A8EBE;
   --theme:var(--now);
   --sans:'Inter',system-ui,-apple-system,sans-serif; --display:'Inter Tight','Inter',sans-serif; --mono:'JetBrains Mono',ui-monospace,monospace;
 }
@@ -174,7 +175,7 @@ main{max-width:1200px;margin:0 auto;padding:0 32px;min-height:calc(100vh - 64px)
 .mini{height:3px;background:var(--faint);border-radius:2px;margin-top:10px;overflow:hidden}
 .mini b{display:block;height:100%;width:0;background:var(--ink)}
 .list{border-top:1px solid var(--ink)}
-.lhead{display:grid;grid-template-columns:28px 44px 1fr 96px 300px;gap:14px;padding:10px 12px;border-bottom:1px solid var(--line)}
+.lhead{display:grid;grid-template-columns:28px 44px 1fr 96px 176px;gap:14px;padding:10px 12px;border-bottom:1px solid var(--line)}
 .track{display:grid;grid-template-columns:28px 44px 1fr 96px 300px;gap:14px;align-items:center;height:60px;padding:0 12px;border-bottom:1px solid var(--line);transition:background .2s}
 .track:hover,.track.active{background:color-mix(in srgb,var(--theme) 12%,transparent)}
 .track .n{font:12px var(--mono);color:var(--muted)}
@@ -187,6 +188,7 @@ main{max-width:1200px;margin:0 auto;padding:0 32px;min-height:calc(100vh - 64px)
 .plat{display:flex;gap:6px;justify-content:flex-end}
 .plat a{height:28px;padding:0 10px;border-radius:999px;border:1px solid var(--line);font-size:12px;display:inline-flex;align-items:center;text-decoration:none;background:var(--card);white-space:nowrap}
 .plat a:hover{border-color:var(--ink)}
+.plat a.ic{width:28px;padding:0;border:none;justify-content:center;color:#fff;transition:transform .15s}.plat a.ic:hover{transform:scale(1.12)}.plat a.ic svg{width:16px;height:16px}
 .more{width:100%;height:48px;display:flex;align-items:center;justify-content:space-between;padding:0 12px;font-size:14px;font-weight:500;border-bottom:1px solid var(--line)}
 .more:hover{background:color-mix(in srgb,var(--theme) 8%,transparent)}
 .popover{position:absolute;right:0;top:56px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:8px;box-shadow:0 20px 40px -20px rgba(0,0,0,.2);display:none;z-index:20;min-width:220px}
@@ -203,7 +205,8 @@ main{max-width:1200px;margin:0 auto;padding:0 32px;min-height:calc(100vh - 64px)
 /* TEXT PAGES */
 .prose{max-width:640px} .prose h2{font-size:40px;margin-bottom:20px} .prose p{color:var(--muted);margin-bottom:14px}
 .prose h3{font-size:16px;margin:24px 0 6px}
-.catlist{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:28px}
+.scalehead p.lead{font-weight:600;color:var(--ink);font-size:19px}
+.catlist{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
 .catlist div{border-radius:14px;padding:16px;background:color-mix(in srgb,var(--c) 22%,var(--card));border:1px solid color-mix(in srgb,var(--c) 40%,transparent);font-size:13px;color:var(--muted)}
 .catlist b{display:block;color:var(--ink);font-size:15px;margin-bottom:4px}
 
@@ -286,18 +289,18 @@ main{max-width:1200px;margin:0 auto;padding:0 32px;min-height:calc(100vh - 64px)
 <!-- ENTRY -->
 <section class="screen" id="entry">
   <div class="narrow" style="margin:auto">
-    <div class="head"><div class="label">Before we begin</div><h2 style="margin-top:12px">How would you like to begin?</h2><p>You only answer the profile once per visit. After that, each session starts with six questions about right now.</p></div>
+    <div class="head"><div class="label">Before we begin</div><h2 style="margin-top:12px">How would you like to begin?</h2><p>You only answer the profile once per visit. After that, each session starts with seven questions about right now.</p></div>
     <div class="cards">
       <button class="card" data-mode="full" style="--theme:var(--stress)">
         <span class="label t">Recommended</span>
         <h3>Personalised picks</h3>
-        <p>A short study-stress and study-style profile, then six questions about right now.</p>
-        <div class="foot"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#77736D"><circle cx="7" cy="7" r="6"/><path d="M7 3.5V7l2.5 1.5"/></svg>About 5 min · 26 questions<span class="go">Start →</span></div>
+        <p>A short study-stress and study-style profile, then seven questions about right now.</p>
+        <div class="foot"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#77736D"><circle cx="7" cy="7" r="6"/><path d="M7 3.5V7l2.5 1.5"/></svg>About 5 min · 27 questions<span class="go">Start →</span></div>
       </button>
       <button class="card" data-mode="quick" style="--theme:var(--now)">
         <span class="label t">Quick start</span>
         <h3>Just the music</h3>
-        <p>Skip the profile. Answer six questions about right now and listen.</p>
+        <p>Skip the profile. Answer seven questions about right now and listen.</p>
         <div class="foot"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#77736D"><circle cx="7" cy="7" r="6"/><path d="M7 3.5V7l2.5 1.5"/></svg>About 1 min · 6 questions<span class="go">Start →</span></div>
       </button>
     </div>
@@ -401,7 +404,7 @@ main{max-width:1200px;margin:0 auto;padding:0 32px;min-height:calc(100vh - 64px)
 <section class="screen" id="thanks" style="--theme:var(--fb)">
   <svg id="chord" width="260" height="110" viewBox="0 0 260 110"></svg>
   <h2>Thanks for listening.</h2>
-  <p>Your next session starts with six quick questions.</p>
+  <p>Your next session starts with seven quick questions.</p>
   <div class="row"><button class="btn" data-act="newSession">New session →</button><button class="btn ghost" data-act="home">Home</button></div>
 </section>
 
@@ -409,22 +412,24 @@ main{max-width:1200px;margin:0 auto;padding:0 32px;min-height:calc(100vh - 64px)
 <section class="screen" id="method">
   <div class="prose" style="max-width:900px;margin:auto 0">
     <div class="label">Method</div><h2 style="margin-top:12px">How StudyTune picks music</h2>
-    <p>The situation comes first. Your task, how hard it is, how tense you feel, your surroundings and whether you want music decide the category. The profile adds background context for the research. It never labels you.</p>
+    <p>The situation comes first. Your task and how hard it is set the cognitive load (high, medium or low). Together with how noisy your space is, that gives a shortlist of music types. How stressed you feel and what you want the music to do then tilt the pick toward calmer or more energetic music; the music goal counts about twice as much as stress. The profile adds background context for the research. It never labels you.</p>
     <div class="catlist">
-      <div style="--c:var(--silence)"><b>Silence</b>When you would rather study without music.</div>
-      <div style="--c:var(--calm)"><b>Calm Reset</b>Before studying or on a break, when tension is high.</div>
-      <div style="--c:var(--piano)"><b>Soft Piano</b>Reading, memorising, writing or hard tasks.</div>
-      <div style="--c:var(--flow)"><b>Steady Flow</b>Problem sets and repetitive work.</div>
-      <div style="--c:var(--canvas)"><b>Open Canvas</b>Creative work or low energy.</div>
+      <div style="--c:var(--silence)"><b>Silence</b>No music, or very noisy with a demanding task.</div>
+      <div style="--c:var(--c-light)"><b>Light Music</b>Wordless and soft. Works almost anywhere.</div>
+      <div style="--c:var(--c-classical)"><b>Classical</b>Gentle instrumentals for focused work.</div>
+      <div style="--c:var(--c-jazz)"><b>Jazz</b>Steady instrumental jazz, medium tasks.</div>
+      <div style="--c:var(--c-guofeng)"><b>Guofeng</b>Chinese-style instrumentals, medium tasks.</div>
+      <div style="--c:var(--c-folk)"><b>Folk & Country</b>Acoustic songs for light tasks.</div>
+      <div style="--c:var(--c-pop)"><b>Pop & R&B</b>Familiar songs for light tasks.</div>
+      <div style="--c:var(--c-electronic)"><b>Electronic</b>Rhythmic tracks when you need a lift.</div>
     </div>
-    <p style="margin-top:24px">All suggestions are conservative: low volume, mostly instrumental and short. If it's noisy, try lowering the volume or moving seats rather than turning the music up.</p>
+    <p style="margin-top:24px">Harder tasks get quieter, wordless music; songs with vocals are only suggested for light tasks. If it's very noisy, we suggest changing your study environment rather than turning the music up.</p>
   </div>
 </section>
 </main>
 <script>
 const $=s=>document.querySelector(s);
-const LINKS = {"Weightless": ["Marconi Union", "https://music.apple.com/us/album/weightless/571977211?i=571977598", "https://open.spotify.com/track/6kkwzB6hXLIONkEk9JciA6", "https://music.youtube.com/watch?v=UfcAVejslrU"], "An Ending (Ascent)": ["Brian Eno", "https://music.apple.com/us/album/an-ending-ascent/714861155?i=714861225", "https://open.spotify.com/track/1vgSaC0BPlL6LEm4Xsx59J", "https://music.youtube.com/watch?v=OlaTeXX3uH8"], "Nuvole Bianche": ["Ludovico Einaudi", "https://music.apple.com/us/album/nuvole-bianche/1750814305?i=1750814487", "https://open.spotify.com/track/3weNRklVDqb4Rr5MhKBR3D", "https://music.youtube.com/watch?v=sR2W2scFS4Y"], "Says": ["Nils Frahm", "https://music.apple.com/us/album/says/1451166665?i=1451166669", "https://open.spotify.com/track/5626KdflSKfeDK7RJQfSrE", "https://music.youtube.com/watch?v=hs1yXpaDgiE"], "Avril 14th": ["Aphex Twin", "https://music.apple.com/us/album/avril-14th/282559693?i=282559791", "https://open.spotify.com/track/1uaGSDFsLdReQgg8p7Obwh", "https://music.youtube.com/watch?v=uxTdTaNIUxo"], "Kiara": ["Bonobo", "https://music.apple.com/us/album/kiara/416292276?i=416292278", "https://open.spotify.com/track/7sqii6BhIDpJChYpU3WjwS", "https://music.youtube.com/watch?v=L-kyRh7N-kE"], "Gymnopédie No. 1": ["Erik Satie", "https://music.apple.com/us/album/gymnopedie-no-1/847714522?i=847718927", "https://open.spotify.com/track/5NGtFXVpXSvwunEIGeviY3", "https://music.youtube.com/watch?v=SJxawrEU14w"], "Spiegel im Spiegel": ["Arvo Pärt", "https://music.apple.com/us/album/spiegel-im-spiegel/356925966?i=356926261", "https://open.spotify.com/track/7zHd9LxIZB8WKosSWN9Umj", "https://music.youtube.com/watch?v=tei47ShkhuM"], "Clair de Lune": ["Claude Debussy", "https://music.apple.com/us/album/suite-bergamasque-iii-clair-de-lune/264281028?i=264281080", "https://open.spotify.com/track/405HNEYKGDifuMcAZvqrqA", "https://music.youtube.com/watch?v=WKU8DJzipW4"], "Merry Christmas Mr. Lawrence": ["Ryuichi Sakamoto", "https://music.apple.com/us/album/merry-christmas-mr-lawrence/1500818100?i=1500818105", "https://open.spotify.com/track/49zUdbESCRSGaknOJWqnTH", "https://music.youtube.com/watch?v=jElCDsfptVU"], "On the Nature of Daylight": ["Max Richter", "https://music.apple.com/us/album/on-the-nature-of-daylight/1368089903?i=1368090483", "https://open.spotify.com/track/56oReVXIfUO9xkX7pHmEU0", "https://music.youtube.com/watch?v=rVN1B-tUpgs"], "Comptine d'un autre été": ["Yann Tiersen", "https://music.apple.com/us/album/comptine-dun-autre-%C3%A9t%C3%A9-lapr%C3%A8s-midi-portrait-version/1482690444?i=1482690858", "https://open.spotify.com/track/14rZjW3RioG7WesZhYESso", "https://music.youtube.com/watch?v=znfYwABeSZ0"], "Intro": ["The xx", "https://music.apple.com/us/album/intro/1850810462?i=1850810463", "https://open.spotify.com/track/2dIi21bJASzEKP20LIutOE", "https://music.youtube.com/watch?v=xMV6l2y67rk"], "Cirrus": ["Bonobo", "https://music.apple.com/us/album/cirrus/611171778?i=611171963", "https://open.spotify.com/track/2lJ4d8MCT6ZlDRHKJ1br14", "https://music.youtube.com/watch?v=WF34N4gJAKE"], "Kong": ["Bonobo", "https://music.apple.com/us/album/kong/416292276?i=416292279", "https://open.spotify.com/track/7Cg3F9ZsZ2TYUnlza49NYh", "https://music.youtube.com/watch?v=pkACVyU4PmA"], "A Walk": ["Tycho", "https://music.apple.com/us/album/a-walk/679251532?i=679251628", "https://open.spotify.com/track/0sQNqu37YQQSI3K0ueswyA", "https://music.youtube.com/watch?v=SDNA934EEVk"], "Awake": ["Tycho", "https://music.apple.com/us/album/awake/793928184?i=793928278", "https://open.spotify.com/track/5MhMXTuVODDF234VDvSxQx", "https://music.youtube.com/watch?v=dm4tkSNKfFI"], "Divenire": ["Ludovico Einaudi", "https://music.apple.com/us/album/divenire/1452374029?i=1452374529", "https://open.spotify.com/track/6KpO4neDXxGdiEgsivZieY", "https://music.youtube.com/watch?v=TCGvZCbcE0Q"], "Holocene": ["Bon Iver", "https://music.apple.com/us/album/holocene/438685974?i=438685989", "https://open.spotify.com/track/35KiiILklye1JRRctaLUb4", "https://music.youtube.com/watch?v=MjxA25Tj1Ks"], "Teardrop": ["Massive Attack", "https://music.apple.com/us/album/teardrop/724466069?i=724466700", "https://open.spotify.com/track/67Hna13dNDkZvBpTXRIaOJ", "https://music.youtube.com/watch?v=3h-JYx76QNM"], "Hoppípolla": ["Sigur Rós", "https://music.apple.com/us/album/hopp%C3%ADpolla/1447486974?i=1447486980", "https://open.spotify.com/track/0yQPpUq5BJyqah5m2Q5Stt", "https://music.youtube.com/watch?v=JAYb8ZyjzD0"], "Svefn-g-englar": ["Sigur Rós", "https://music.apple.com/us/album/svefn-g-englar/1447442814?i=1447442935", "https://open.spotify.com/track/07eGxuz8bL6QMsRqEe1Adu", "https://music.youtube.com/watch?v=VCVtqwu3_vg"], "Re: Stacks": ["Bon Iver", "https://music.apple.com/us/album/re-stacks/947059824?i=947059839", "https://open.spotify.com/track/20AC70RUlVz6A6dCcQ5tRS", "https://music.youtube.com/watch?v=3w68krri0bw"], "Dive": ["Tycho", "https://music.apple.com/us/album/dive/679251532?i=679251720", "https://open.spotify.com/track/4Cy6hgJGkLsOD1S8x4ysFF", "https://music.youtube.com/watch?v=TNH5Kn2Vnt8"]}
-;
+const LINKS = {"Weightless": {"c": "Light Music", "a": "Marconi Union", "e": 1, "am": "https://music.apple.com/us/album/weightless/571977211?i=571977598", "amid": 571977598, "amc": "us", "sp": "https://open.spotify.com/track/6kkwzB6hXLIONkEk9JciA6", "yt": "https://music.youtube.com/watch?v=UfcAVejslrU", "ne": "https://music.163.com/#/song?id=864555390", "neid": 864555390, "qq": "https://y.qq.com/n/ryqq/songDetail/0006SvSN3ZVE4W"}, "Nuvole Bianche": {"c": "Light Music", "a": "Ludovico Einaudi", "e": 1.5, "am": "https://music.apple.com/us/album/nuvole-bianche/1750814305?i=1750814487", "amid": 1750814487, "amc": "us", "sp": "https://open.spotify.com/track/3weNRklVDqb4Rr5MhKBR3D", "yt": "https://music.youtube.com/watch?v=CQ8zglIXZi8", "ne": "https://music.163.com/#/song?id=20952182", "neid": 20952182, "qq": "https://y.qq.com/n/ryqq/songDetail/002hVlpX1iavnF"}, "River Flows in You": {"c": "Light Music", "a": "Yiruma", "e": 1.5, "am": "https://music.apple.com/us/album/river-flows-in-you/1436677753?i=1436677761", "amid": 1436677761, "amc": "us", "yt": "https://music.youtube.com/watch?v=92IlKBhKbWM", "ne": "https://music.163.com/#/song?id=22829932", "neid": 22829932}, "Kiss the Rain": {"c": "Light Music", "a": "Yiruma", "e": 1.5, "am": "https://music.apple.com/us/album/kiss-the-rain/1437481261?i=1437481268", "amid": 1437481268, "amc": "us", "yt": "https://music.youtube.com/watch?v=I0et_hDtfxY", "ne": "https://music.163.com/#/song?id=28411989", "neid": 28411989}, "夜的钢琴曲五": {"c": "Light Music", "a": "石进", "e": 1.5, "yt": "https://music.youtube.com/watch?v=l5oVwHVel2w", "ne": "https://music.163.com/#/song?id=149297", "neid": 149297, "qq": "https://y.qq.com/n/ryqq/songDetail/004Fh0Km05PFud"}, "Summer": {"c": "Light Music", "a": "Joe Hisaishi", "e": 2.5, "am": "https://music.apple.com/us/album/summer/1498700467?i=1498700482", "amid": 1498700482, "amc": "us", "yt": "https://music.youtube.com/watch?v=l0GN40EL1VU", "ne": "https://music.163.com/#/song?id=1871072914", "neid": 1871072914}, "The Truth That You Leave": {"c": "Light Music", "a": "Pianoboy", "e": 1.5, "am": "https://music.apple.com/us/album/the-truth-that-you-leave/337476578?i=337476629", "amid": 337476629, "amc": "us", "yt": "https://music.youtube.com/watch?v=6uUsfU6PGp0", "ne": "https://music.163.com/#/song?id=3355872819", "neid": 3355872819, "qq": "https://y.qq.com/n/ryqq/songDetail/001ZcWis2fHdIE"}, "Comptine d'un autre été": {"c": "Light Music", "a": "Yann Tiersen", "e": 2, "am": "https://music.apple.com/us/album/comptine-dun-autre-%C3%A9t%C3%A9-lapr%C3%A8s-midi-portrait-version/1482690444?i=1482690858", "amid": 1482690858, "amc": "us", "sp": "https://open.spotify.com/track/14rZjW3RioG7WesZhYESso", "yt": "https://music.youtube.com/watch?v=znfYwABeSZ0", "ne": "https://music.163.com/#/song?id=26635189", "neid": 26635189, "qq": "https://y.qq.com/n/ryqq/songDetail/001BjMXM0CW1ft"}, "Gymnopédie No. 1": {"c": "Classical", "a": "Erik Satie", "e": 1, "am": "https://music.apple.com/us/album/gymnopedie-no-1/847714522?i=847718927", "amid": 847718927, "amc": "us", "sp": "https://open.spotify.com/track/5NGtFXVpXSvwunEIGeviY3", "yt": "https://music.youtube.com/watch?v=EaTjt_iIs2s", "ne": "https://music.163.com/#/song?id=566297133", "neid": 566297133, "qq": "https://y.qq.com/n/ryqq/songDetail/000iM78G4J56rr"}, "Clair de Lune": {"c": "Classical", "a": "Claude Debussy", "e": 1, "am": "https://music.apple.com/us/album/clair-de-lune/1450048168?i=1450048391", "amid": 1450048391, "amc": "us", "sp": "https://open.spotify.com/track/405HNEYKGDifuMcAZvqrqA", "yt": "https://music.youtube.com/watch?v=WKU8DJzipW4", "ne": "https://music.163.com/#/song?id=1434822376", "neid": 1434822376, "qq": "https://y.qq.com/n/ryqq/songDetail/000U7UBl0gBPXd"}, "Spiegel im Spiegel": {"c": "Classical", "a": "Arvo Pärt", "e": 1, "sp": "https://open.spotify.com/track/7zHd9LxIZB8WKosSWN9Umj", "yt": "https://music.youtube.com/watch?v=FZe3mXlnfNc", "ne": "https://music.163.com/#/song?id=1002351", "neid": 1002351, "qq": "https://y.qq.com/n/ryqq/songDetail/0041isak1fnA21"}, "Air on the G String": {"c": "Classical", "a": "Johann Sebastian Bach", "e": 1.5, "am": "https://music.apple.com/us/album/air-on-the-g-string-orchestral-suite-no-3-in-d-major/962041117?i=962041118", "amid": 962041118, "amc": "us", "yt": "https://music.youtube.com/watch?v=C4gIXvPk70g", "ne": "https://music.163.com/#/song?id=3407590112", "neid": 3407590112, "qq": "https://y.qq.com/n/ryqq/songDetail/002ptLqg233S3U"}, "Canon in D": {"c": "Classical", "a": "Johann Pachelbel", "e": 2, "am": "https://music.apple.com/us/album/pachelbels-canon-in-d-major-piano/623849188?i=623849405", "amid": 623849405, "amc": "us", "yt": "https://music.youtube.com/watch?v=NlprozGcs80", "ne": "https://music.163.com/#/song?id=560780790", "neid": 560780790, "qq": "https://y.qq.com/n/ryqq/songDetail/00386c3y3BpIrg"}, "Cello Suite No. 1: Prélude": {"c": "Classical", "a": "Yo-Yo Ma", "e": 2, "am": "https://music.apple.com/us/album/cello-suite-no-1-in-g-major-bwv-1007-i-pr%C3%A9lude/381515547?i=381515553", "amid": 381515553, "amc": "us", "yt": "https://music.youtube.com/watch?v=1prweT95Mo0"}, "Peace Piece": {"c": "Jazz", "a": "Bill Evans", "e": 1.5, "am": "https://music.apple.com/us/album/peace-piece/1440926168?i=1440926603", "amid": 1440926603, "amc": "us", "yt": "https://music.youtube.com/watch?v=-49G2-0GBSA", "ne": "https://music.163.com/#/song?id=1844660328", "neid": 1844660328, "qq": "https://y.qq.com/n/ryqq/songDetail/0011dPTc1gozsu"}, "Blue in Green": {"c": "Jazz", "a": "Miles Davis", "e": 1.5, "am": "https://music.apple.com/us/album/blue-in-green/268443092?i=268443131", "amid": 268443131, "amc": "us", "yt": "https://music.youtube.com/watch?v=TLDflhhdPCg", "ne": "https://music.163.com/#/song?id=21335865", "neid": 21335865, "qq": "https://y.qq.com/n/ryqq/songDetail/0025GXpp2jdNdg"}, "Waltz for Debby": {"c": "Jazz", "a": "Bill Evans", "e": 2, "am": "https://music.apple.com/us/album/waltz-for-debby/1443627009?i=1443627195", "amid": 1443627195, "amc": "us", "yt": "https://music.youtube.com/watch?v=wCINvavqFXk", "ne": "https://music.163.com/#/song?id=22084120", "neid": 22084120, "qq": "https://y.qq.com/n/ryqq/songDetail/002cESVP3LNlgg"}, "Take Five": {"c": "Jazz", "a": "Dave Brubeck", "e": 2.5, "am": "https://music.apple.com/us/album/take-five/157427923?i=157427932", "amid": 157427932, "amc": "us", "yt": "https://music.youtube.com/watch?v=ryA6eHZNnXY", "ne": "https://music.163.com/#/song?id=22091746", "neid": 22091746, "qq": "https://y.qq.com/n/ryqq/songDetail/000C6IJh4d3K1a"}, "So What": {"c": "Jazz", "a": "Miles Davis", "e": 2.5, "am": "https://music.apple.com/us/album/so-what/268443092?i=268443097", "amid": 268443097, "amc": "us", "yt": "https://music.youtube.com/watch?v=ylXk1LBvIqU", "ne": "https://music.163.com/#/song?id=21335863", "neid": 21335863, "qq": "https://y.qq.com/n/ryqq/songDetail/004OauLH2aHwaM"}, "Cantaloupe Island": {"c": "Jazz", "a": "Herbie Hancock", "e": 3, "am": "https://music.apple.com/us/album/cantaloupe-island/1443829596?i=1443829786", "amid": 1443829786, "amc": "us", "yt": "https://music.youtube.com/watch?v=otFVFLtRF_s", "ne": "https://music.163.com/#/song?id=18208052", "neid": 18208052, "qq": "https://y.qq.com/n/ryqq/songDetail/0002x81m1SXElb"}, "琵琶语": {"c": "Guofeng", "a": "林海", "e": 1.5, "yt": "https://music.youtube.com/watch?v=VUJASgchLyg", "ne": "https://music.163.com/#/song?id=30431472", "neid": 30431472, "qq": "https://y.qq.com/n/ryqq/songDetail/001DdbTH4THNHP"}, "月光边境": {"c": "Guofeng", "a": "林海", "e": 1.5, "yt": "https://music.youtube.com/watch?v=xObXbz5uMUM", "ne": "https://music.163.com/#/song?id=26402498", "neid": 26402498, "qq": "https://y.qq.com/n/ryqq/songDetail/0031bhhk1ABXAo"}, "欢沁": {"c": "Guofeng", "a": "林海", "e": 2, "yt": "https://music.youtube.com/watch?v=vPf_Eghp36g", "ne": "https://music.163.com/#/song?id=27698838", "neid": 27698838, "qq": "https://y.qq.com/n/ryqq/songDetail/00306Ue94IQZJm"}, "渔舟唱晚": {"c": "Guofeng", "a": "华夏民族乐团", "e": 1.5, "ne": "https://music.163.com/#/song?id=520568265", "neid": 520568265, "qq": "https://y.qq.com/n/ryqq/songDetail/002KHp9W3oKn38"}, "高山流水": {"c": "Guofeng", "a": "女子十二乐坊", "e": 1.5, "yt": "https://music.youtube.com/watch?v=YEJgtCwWapE", "ne": "https://music.163.com/#/song?id=369265", "neid": 369265, "qq": "https://y.qq.com/n/ryqq/songDetail/001EkU863wqFN7"}, "春江花月夜": {"c": "Guofeng", "a": "中央民族乐团", "e": 1.5, "yt": "https://music.youtube.com/watch?v=pT-yWvzsDhE", "ne": "https://music.163.com/#/song?id=396351", "neid": 396351, "qq": "https://y.qq.com/n/ryqq/songDetail/000xECkT1QwrH0"}, "自由": {"c": "Guofeng", "a": "女子十二乐坊", "e": 3.5, "am": "https://music.apple.com/us/album/%E8%87%AA%E7%94%B1/6774669297?i=6774669320", "amid": 6774669320, "amc": "us", "yt": "https://music.youtube.com/watch?v=8kAzLT5ZwCQ", "ne": "https://music.163.com/#/song?id=2061376372", "neid": 2061376372, "qq": "https://y.qq.com/n/ryqq/songDetail/003LqqsF1QpZgo"}, "成都": {"c": "Folk & Country", "a": "赵雷", "e": 2, "yt": "https://music.youtube.com/watch?v=-LHw1sJPFSc", "ne": "https://music.163.com/#/song?id=436514312", "neid": 436514312, "qq": "https://y.qq.com/n/ryqq/songDetail/003TLWoN0gQnP5"}, "南山南": {"c": "Folk & Country", "a": "马頔", "e": 2, "yt": "https://music.youtube.com/watch?v=enETc0Z2Bh0", "ne": "https://music.163.com/#/song?id=29715551", "neid": 29715551, "qq": "https://y.qq.com/n/ryqq/songDetail/001abixR3f8L59"}, "Banana Pancakes": {"c": "Folk & Country", "a": "Jack Johnson", "e": 2, "am": "https://music.apple.com/us/album/banana-pancakes/1440857781?i=1440857795", "amid": 1440857795, "amc": "us", "yt": "https://music.youtube.com/watch?v=m-v-LGOfaKo", "ne": "https://music.163.com/#/song?id=18602364", "neid": 18602364, "qq": "https://y.qq.com/n/ryqq/songDetail/001xKxK22KGx6g"}, "Take Me Home, Country Roads": {"c": "Folk & Country", "a": "John Denver", "e": 2.5, "am": "https://music.apple.com/us/album/take-me-home-country-roads-original-version/511074105?i=511074294", "amid": 511074294, "amc": "us", "yt": "https://music.youtube.com/watch?v=1vrEljMfXYo", "ne": "https://music.163.com/#/song?id=18650879", "neid": 18650879, "qq": "https://y.qq.com/n/ryqq/songDetail/004K1kNP2C3F9D"}, "Riptide": {"c": "Folk & Country", "a": "Vance Joy", "e": 3, "am": "https://music.apple.com/us/album/riptide/1022164257?i=1022164261", "amid": 1022164261, "amc": "us", "yt": "https://music.youtube.com/watch?v=Y6TFSTHUxi0", "ne": "https://music.163.com/#/song?id=26226249", "neid": 26226249, "qq": "https://y.qq.com/n/ryqq/songDetail/002uywJz1HOgHy"}, "Ho Hey": {"c": "Folk & Country", "a": "The Lumineers", "e": 3, "am": "https://music.apple.com/us/album/ho-hey/1754031514?i=1754031516", "amid": 1754031516, "amc": "us", "yt": "https://music.youtube.com/watch?v=qQz-4vdVJLM", "ne": "https://music.163.com/#/song?id=4170558", "neid": 4170558, "qq": "https://y.qq.com/n/ryqq/songDetail/003ycs6D4cZ0Um"}, "Best Part": {"c": "Pop & R&B", "a": "Daniel Caesar", "e": 2, "am": "https://music.apple.com/us/album/best-part-feat-h-e-r/1799080774?i=1799080776", "amid": 1799080776, "amc": "us", "yt": "https://music.youtube.com/watch?v=vBy7FaapGRo", "ne": "https://music.163.com/#/song?id=514172235", "neid": 514172235, "qq": "https://y.qq.com/n/ryqq/songDetail/001Te2kM2YONNP"}, "晴天": {"c": "Pop & R&B", "a": "周杰伦", "e": 2.5, "yt": "https://music.youtube.com/watch?v=k35UurSJPEo", "qq": "https://y.qq.com/n/ryqq/songDetail/0039MnYb0qxYhV"}, "Golden Hour": {"c": "Pop & R&B", "a": "JVKE", "e": 2.5, "am": "https://music.apple.com/us/album/golden-hour/1640157064?i=1640157165", "amid": 1640157165, "amc": "us", "yt": "https://music.youtube.com/watch?v=UsR08cY8k0A", "ne": "https://music.163.com/#/song?id=1958557540", "neid": 1958557540, "qq": "https://y.qq.com/n/ryqq/songDetail/000R6fUk3dQJGq"}, "Sunflower": {"c": "Pop & R&B", "a": "Post Malone", "e": 3, "am": "https://music.apple.com/us/album/sunflower-spider-man-into-the-spider-verse/1445949265?i=1445949267", "amid": 1445949267, "amc": "us", "yt": "https://music.youtube.com/watch?v=ApXoWvfEYVU", "ne": "https://music.163.com/#/song?id=2617548763", "neid": 2617548763, "qq": "https://y.qq.com/n/ryqq/songDetail/003CQnFy0Lecaw"}, "稻香": {"c": "Pop & R&B", "a": "周杰伦", "e": 3, "yt": "https://music.youtube.com/watch?v=kC2bkbMC6Zs", "qq": "https://y.qq.com/n/ryqq/songDetail/003aAYrm3GE0Ac"}, "Levitating": {"c": "Pop & R&B", "a": "Dua Lipa", "e": 4, "am": "https://music.apple.com/us/album/levitating/1538003494?i=1538003843", "amid": 1538003843, "amc": "us", "yt": "https://music.youtube.com/watch?v=WHuBW3qKm9g", "ne": "https://music.163.com/#/song?id=1433934518", "neid": 1433934518, "qq": "https://y.qq.com/n/ryqq/songDetail/003XxeuF4YvaAC"}, "Blinding Lights": {"c": "Pop & R&B", "a": "The Weeknd", "e": 4.5, "am": "https://music.apple.com/us/album/blinding-lights/1499378108?i=1499378607", "amid": 1499378607, "amc": "us", "yt": "https://music.youtube.com/watch?v=fHI8X4OXluQ", "ne": "https://music.163.com/#/song?id=1406633327", "neid": 1406633327, "qq": "https://y.qq.com/n/ryqq/songDetail/000th8ka2NdnID"}, "Dive": {"c": "Electronic", "a": "Tycho", "e": 2.5, "am": "https://music.apple.com/us/album/dive/679251532?i=679251720", "amid": 679251720, "amc": "us", "sp": "https://open.spotify.com/track/4Cy6hgJGkLsOD1S8x4ysFF", "yt": "https://music.youtube.com/watch?v=BGXOYfZMR0w", "ne": "https://music.163.com/#/song?id=1409361292", "neid": 1409361292, "qq": "https://y.qq.com/n/ryqq/songDetail/0042aIy939YQCz"}, "Kiara": {"c": "Electronic", "a": "Bonobo", "e": 2.5, "am": "https://music.apple.com/us/album/kiara/416292276?i=416292278", "amid": 416292278, "amc": "us", "sp": "https://open.spotify.com/track/7sqii6BhIDpJChYpU3WjwS", "yt": "https://music.youtube.com/watch?v=L-kyRh7N-kE", "ne": "https://music.163.com/#/song?id=16785467", "neid": 16785467, "qq": "https://y.qq.com/n/ryqq/songDetail/004VgAk944f4rD"}, "Midnight City": {"c": "Electronic", "a": "M83", "e": 3.5, "am": "https://music.apple.com/us/album/midnight-city/828259375?i=828259377", "amid": 828259377, "amc": "us", "yt": "https://music.youtube.com/watch?v=dD6qXgKjKzU", "ne": "https://music.163.com/#/song?id=16957723", "neid": 16957723, "qq": "https://y.qq.com/n/ryqq/songDetail/003waPLv1Ntd5W"}, "Faded": {"c": "Electronic", "a": "Alan Walker", "e": 3.5, "am": "https://music.apple.com/us/album/faded/1196294554?i=1196294581", "amid": 1196294581, "amc": "us", "yt": "https://music.youtube.com/watch?v=zbxl4aiJo3M", "ne": "https://music.163.com/#/song?id=36990266", "neid": 36990266, "qq": "https://y.qq.com/n/ryqq/songDetail/002NkERn2LNVI4"}, "Something Just Like This": {"c": "Electronic", "a": "The Chainsmokers", "e": 4, "am": "https://music.apple.com/us/album/something-just-like-this/1207120422?i=1207120448", "amid": 1207120448, "amc": "us", "yt": "https://music.youtube.com/watch?v=FM7MFYoylVs", "ne": "https://music.163.com/#/song?id=461347998", "neid": 461347998, "qq": "https://y.qq.com/n/ryqq/songDetail/004JaCzc1KhTrU"}, "Wake Me Up": {"c": "Electronic", "a": "Avicii", "e": 4.5, "am": "https://music.apple.com/us/album/wake-me-up/1440872730?i=1440872929", "amid": 1440872929, "amc": "us", "yt": "https://music.youtube.com/watch?v=5y_KJAg8bHI", "ne": "https://music.163.com/#/song?id=27713920", "neid": 27713920, "qq": "https://y.qq.com/n/ryqq/songDetail/002R4lUQ2a4f2D"}, "Lean On": {"c": "Electronic", "a": "Major Lazer", "e": 4.5, "am": "https://music.apple.com/us/album/lean-on-feat-dj-snake-m%C3%B8/1696639120?i=1696639397", "amid": 1696639397, "amc": "us", "yt": "https://music.youtube.com/watch?v=u_hVnjdC8pQ", "ne": "https://music.163.com/#/song?id=3351574626", "neid": 3351574626, "qq": "https://y.qq.com/n/ryqq/songDetail/0014FPXg0QOyLI"}};
 const Q = {
   stress:[["E01","I feel a lot of pressure in my daily studying."],["E04","My parents focus too much on my grades, which puts a lot of pressure on me."],["E05","I feel there is too much homework."],["E07","I feel there are too many tests and exams at school."],["E08","When my test or exam results are not ideal, I feel I have let my teachers down."],["E09","When my test or exam results are poor, I feel I have let my parents down."],["E11","I feel stressed when I do not meet the standards I set for myself."],["E13","When I can't reach my own goals, I often can't sleep because I'm worried."],["E14","I often lack confidence in my grades."],["E16","I find it hard to concentrate in class."]],
   traits:[["B02","…is reserved."],["B03","…is outgoing and sociable."],["B04","…is helpful and unselfish with others."],["B06","…is generally trusting."],["B07","…does a thorough job."],["B09","…makes plans and follows through with them."],["B10","…worries a lot."],["B12","…is relaxed and handles stress well."],["B13","…is original and comes up with new ideas."],["B14","…values artistic and aesthetic experiences."]]
@@ -435,7 +440,8 @@ const NOWQ = [
   ["S03","How stressed or tense do you feel right now?","slider",["Not at all","Very"]],
   ["S04","Which is closest to how you feel right now?",["Sleepy or tired","Distracted, hard to focus","Calm and normal","Tense or restless","Energized"]],
   ["S05","What is your study space like?",["Mostly quiet","Light background noise","People talking nearby","Quite noisy"]],
-  ["S06","How do you want music this time?",["Before I study / on a break","While I study","No music, just quiet"]]
+  ["S06","How do you want music this time?",["Before I study / on a break","While I study","No music, just quiet"]],
+  ["S07","How do you want music to help you study?",["Relieve stress","Release emotions","Stay focused","Get energized","Boost motivation"]]
 ];
 const FBQ = [
   ["F01","Did you listen to the music we suggested?",["Most or all of it","Just a little","Not at all"]],
@@ -445,12 +451,30 @@ const FBQ = [
   ["F05","How much of your task did you finish?",["A little","About half","Most of it","All of it","Not yet / Not applicable"]]
 ];
 const CATS = {
-  "Silence":{v:"--silence",bpm:0,line:"Quiet focus, no music.",chord:null,tracks:[]},
-  "Calm Reset":{v:"--calm",bpm:60,line:"5–10 minutes of slow music to settle before you start.",chord:[41,48,52,57,64],tracks:["Spiegel im Spiegel","On the Nature of Daylight","An Ending (Ascent)","Weightless","Clair de Lune","Gymnopédie No. 1"]},
-  "Soft Piano":{v:"--piano",bpm:70,line:"Quiet, simple, wordless piano for language-heavy work.",chord:[45,52,55,60,64],tracks:["Gymnopédie No. 1","Avril 14th","Comptine d'un autre été","Nuvole Bianche","Clair de Lune","Merry Christmas Mr. Lawrence"]},
-  "Steady Flow":{v:"--flow",bpm:90,line:"Even, steady instrumentals for problem sets and routine work.",chord:[38,45,53,57,64],tracks:["Kiara","Says","Intro","A Walk","Awake","Dive"]},
-  "Open Canvas":{v:"--canvas",bpm:100,line:"Gently lifting music for creative work or low energy.",chord:[43,50,55,59,62],tracks:["Cirrus","Divenire","Hoppípolla","Kong","Holocene","Teardrop"]}
+  "Silence":{v:"--silence",bpm:0,e:0,line:"Quiet focus, no music.",chord:null,tracks:[]},
+  "Light Music":{v:"--c-light",bpm:66,e:1.4,line:"Soft, wordless light music that stays in the background.",chord:[41,48,52,57,64]},
+  "Classical":{v:"--c-classical",bpm:60,e:1.4,line:"Gentle classical instrumentals — piano, strings, cello.",chord:[45,52,55,60,64]},
+  "Jazz":{v:"--c-jazz",bpm:84,e:2.2,line:"Steady, mellow jazz instrumentals with an even groove.",chord:[38,45,53,57,64]},
+  "Guofeng":{v:"--c-guofeng",bpm:70,e:1.9,line:"Chinese-style instrumentals — guzheng, pipa, flute.",chord:[43,50,55,62,67]},
+  "Folk & Country":{v:"--c-folk",bpm:92,e:2.4,line:"Warm acoustic songs for lighter, routine tasks.",chord:[43,50,55,59,62]},
+  "Pop & R&B":{v:"--c-pop",bpm:100,e:3.2,line:"Familiar pop and R&B to keep easy work moving.",chord:[40,47,52,56,63]},
+  "Electronic":{v:"--c-electronic",bpm:118,e:3.8,line:"Rhythmic electronic and dance tracks for a lift.",chord:[38,45,50,57,62]}
 };
+Object.keys(CATS).forEach(c=>{ if(c!=='Silence') CATS[c].tracks=Object.keys(LINKS).filter(t=>LINKS[t].c===c); });
+/* task load × environment → shortlist; stress and music goal tilt the energy */
+const LOAD_BASE={"Reading":2,"Memorizing":2,"Writing":2,"Math / problem sets":2,"Creative work":1,"Something else":1,"Repetitive work":0};
+const DIFF={"Fairly easy":-1,"Medium":0,"Fairly hard":1};
+const LOADLBL={high:"High-focus task",medium:"Medium-focus task",low:"Light task"};
+const MATRIX={
+  quiet:{high:["Light Music","Classical"],medium:["Light Music","Classical","Jazz","Guofeng"],low:["Folk & Country","Pop & R&B","Electronic"]},
+  moderate:{high:["Light Music","Classical"],medium:["Light Music","Jazz","Guofeng"],low:["Light Music","Folk & Country","Pop & R&B","Electronic"]},
+  noisy:{high:["Silence"],medium:["Light Music","Classical"],low:["Light Music","Pop & R&B"]}
+};
+const GOAL={"Relieve stress":-1.5,"Release emotions":1.5,"Stay focused":-0.75,"Get energized":1.5,"Boost motivation":0.75};
+function loadOf(a){ if(a.S06==='Before I study / on a break') return 'low'; const v=(LOAD_BASE[a.S01]??1)+(DIFF[a.S02]??0); return v>=2?'high':v===1?'medium':'low'; }
+function envOf(a){ return a.S05==='Mostly quiet'?'quiet':a.S05==='Quite noisy'?'noisy':'moderate'; }
+/* stress 0–10 shifts ±0.75; music goal shifts ±1.5 (about twice the weight) */
+function targetEnergy(a){ return 2.5+((+a.S03||0)-5)/5*0.75+(GOAL[a.S07]||0); }
 const CHORDS={home:[36,48,52,55,59],profile:[45,48,52,55,59,62],now:[41,48,52,57,64],fb:[43,50,54,59,62],end:[36,48,52,55,59,64]};
 
 /* ---------- visit-only memory (sessionStorage) ---------- */
@@ -504,7 +528,7 @@ const Snd={ctx:null,master:null,amb:null,on:true,duck:false,want:true,quiet:fals
   toggle(){ this.on=!this.on; SS.set('sound',this.on); if(!this.ctx) this.init(); if(this.ctx){ if(this.ctx.state==='suspended') this.ctx.resume(); const t=this.ctx.currentTime; this.master.gain.cancelScheduledValues(t); this.master.gain.setValueAtTime(this.master.gain.value,t); this.master.gain.linearRampToValueAtTime(this.on?1:0,t+.4);} updSoundBtn(); }
 };
 const PENTA=[60,62,64,67,69,72,74,76]; // C major pentatonic, mapped to staff height
-const MEL=[3,4,5,4,6,5,3,2,4,5,6,7,5,4,3,4,5,3,2,1,3,4,5,6,4,3];
+const MEL=[3,4,5,4,6,5,3,2,4,5,6,7,5,4,3,4,5,3,2,1,3,4,5,6,4,3,2];
 function updSoundBtn(){}
 document.addEventListener('pointerdown',()=>{ if(!Snd.ctx&&Snd.on) Snd.init(); else if(Snd.ctx?.state==='suspended') Snd.ctx.resume(); },{capture:true});
 function $$(s){return [...document.querySelectorAll(s)]}
@@ -585,7 +609,7 @@ function openScale(key,flip){
   sc.style.setProperty('--theme', key==='stress'?'var(--stress)':'var(--traits)');
   $('#scaleKicker').textContent= key==='stress'?'Profile · Part 1 of 2':'Profile · Part 2 of 2';
   $('#scaleTitle').textContent= key==='stress'?'Study stress':'Study style';
-  $('#scaleSub').textContent= key==='stress'?'How much do you agree with each statement? There are no right answers.':'I see myself as someone who…';
+  $('#scaleSub').classList.toggle('lead',key==='traits'); $('#scaleSub').textContent= key==='stress'?'How much do you agree with each statement? There are no right answers.':'I see myself as someone who…';
   $('#qrows').innerHTML=Q[key].map(([id,t])=>`<div class="qrow" data-id="${id}"><div class="q">${t}</div><div class="opts">${[1,2,3,4,5].map(v=>`<button class="dot${scaleAns[id]===v?' sel':''}" data-v="${v}" aria-label="${v}">${v}</button>`).join('')}</div></div>`).join('');
   $$('#qrows .dot').forEach(b=>b.onclick=()=>{const id=b.closest('.qrow').dataset.id; const fresh=!scaleAns[id]; scaleAns[id]=+b.dataset.v;
     b.parentElement.querySelectorAll('.dot').forEach(x=>x.classList.toggle('sel',x===b));
@@ -595,7 +619,7 @@ function openScale(key,flip){
 }
 function updScale(){
   const ids=Q[scaleKey].map(q=>q[0]), done=ids.filter(i=>scaleAns[i]).length, base=scaleKey==='stress'?0:10, answered=base+done;
-  $('#scaleCount').textContent=`Question ${Math.min(answered+1,26)} of 26`;
+  $('#scaleCount').textContent=`Question ${Math.min(answered+1,27)} of 27`;
   drawStaff($('#staffScale'),26,answered);
   const left=10-done; $('#scaleLeft').textContent= left?`${left} left`:''; $('#scaleNext').disabled=!!left;
 }
@@ -625,7 +649,7 @@ function qBlock(q,store,onchange){
 }
 
 /* ---------- right now ---------- */
-function nowTotals(){ return (firstRound && profile?.mode==='full') ? {total:26,base:20} : {total:6,base:0}; }
+function nowTotals(){ return (firstRound && profile?.mode==='full') ? {total:27,base:20} : {total:NOWQ.length,base:0}; }
 function renderNow(){
   const g=$('#nowGrid'); const blocks=NOWQ.map(q=>qBlock(q,nowAns,updNow));
   g.innerHTML=blocks.map(b=>b.html).join(''); blocks.forEach(b=>b.bind(g)); updNow();
@@ -635,16 +659,16 @@ function updNow(changed,silent){
   drawStaff($('#staffNow'),total,base+done,0);
   if(changed&&!silent){const i=NOWQ.findIndex(q=>q[0]===changed); Snd.pluck(noteFor(base+i));}
   $('#nowCount').textContent=`Question ${Math.min(base+done+1,total)} of ${total}`;
-  const left=6-done; $('#nowLeft').textContent=left?`${left} left`:''; $('#nowNext').disabled=!!left;
+  const left=NOWQ.length-done; $('#nowLeft').textContent=left?`${left} left`:''; $('#nowNext').disabled=!!left;
 }
 $('#nowBack').onclick=()=>{ if(nowFrom==='scale') openScale('traits'); else go(nowFrom==='now'?'home':nowFrom); };
 $('#nowNext').onclick=()=>{cur.S={...nowAns}; cur.category=decide(nowAns); firstRound=false; loading(()=>renderCategory(cur.category));};
 function decide(a){
   if(a.S06==='No music, just quiet') return 'Silence';
-  if(a.S06==='Before I study / on a break' && a.S03>=6) return 'Calm Reset';
-  if(['Reading','Memorizing','Writing'].includes(a.S01)||a.S02==='Fairly hard') return 'Soft Piano';
-  if(['Math / problem sets','Repetitive work'].includes(a.S01)) return 'Steady Flow';
-  return 'Open Canvas';
+  const opts=MATRIX[envOf(a)][loadOf(a)], tgt=targetEnergy(a);
+  let best=opts[0], bs=-1e9;
+  opts.forEach((c,i)=>{ const sc=c==='Silence'?0:-Math.abs(CATS[c].e-tgt)-0.25*i; if(sc>bs){bs=sc;best=c;} });
+  return best;
 }
 
 /* ---------- loading ---------- */
@@ -665,14 +689,24 @@ function renderCategory(c){
   const disc=$('#catDisc'); disc.className='catdisc'+(c==='Silence'?'':' spinart');
   vinyl(disc,{label:c,arm:false});
   if(info.bpm){const b=document.createElement('div');b.className='breath';b.style.setProperty('--beat',(60/info.bpm)+'s');disc.prepend(b);}
-  const noisy=['People talking nearby','Quite noisy'].includes(a.S05);
-  const hardRead=a.S01==='Reading'&&a.S02==='Fairly hard'&&c!=='Silence';
-  let html=`<div class="label t">Your category</div><h2 class="catname">${c}</h2><div class="reason">${[a.S01,a.S02,a.S05].join(' · ')}<small>${info.line}</small></div>`;
-  if(noisy&&c!=='Silence') html+=`<div class="tip"><i></i>Noisy around you? Try lowering the volume or moving seats.</div>`;
+  const env=envOf(a), load=a.S06==='No music, just quiet'?null:loadOf(a);
+  const hardRead=load==='high'&&c!=='Silence';
+  let html=`<div class="label t">Your category</div><h2 class="catname">${c}</h2><div class="reason">${[a.S01,!load?a.S02:a.S06==='Before I study / on a break'?'Before studying / on a break':LOADLBL[load],a.S05].join(' · ')}<small>${info.line}</small></div>`;
+  const tips=[];
+  if(env==='noisy') tips.push('It is very noisy here. We suggest changing your study environment.');
+  if(load){
+    if(env==='quiet'&&load==='high'&&c!=='Silence') tips.push('Demanding task: quiet usually works best. Music is optional, so keep it soft.');
+    if(env==='moderate'&&load==='high') tips.push('Cut down distractions first. If you play music, keep the volume low.');
+    if(env==='moderate'&&load!=='high'&&a.S05==='People talking nearby') tips.push('People talking nearby? Keep the volume low rather than turning it up.');
+    if(env==='noisy'&&load==='high') tips.push('Extra music is not recommended. Try noise-cancelling or a quieter spot.');
+    if(env==='noisy'&&load==='medium') tips.push('Reduce the noise first. If you still want music, keep it low and steady.');
+    if(env==='noisy'&&load==='low') tips.push('Get the noise under control first, then play what you like.');
+  }
+  tips.forEach(t=>html+=`<div class="tip"><i></i>${t}</div>`);
   if(c==='Silence'){
     html+=`<div class="timer" id="sTimer">25:00</div><div class="tip"><i></i>Silence notifications and keep one tab open.</div>
     <div class="catbtns"><button class="btn" id="sStart">Start 25-min focus</button><button class="btn ghost" data-go="feedback">Skip to feedback</button></div>`;
-  } else html+=`<div class="catbtns"><button class="btn" id="playCat">Play the tracks →</button>${hardRead?'<button class="btn ghost" id="trySilence">Or start with 5 min of silence</button>':''}</div>`;
+  } else html+=`<div class="catbtns"><button class="btn" id="playCat">Play the tracks →</button>${hardRead?'<button class="btn ghost" id="trySilence">Or start with silence</button>':''}</div>`;
   $('#catText').innerHTML=html;
   go('category'); Snd.pad(info.chord,{bpm:info.bpm});
   const p=$('#playCat'); if(p) p.onclick=()=>renderSongs(c);
@@ -691,19 +725,29 @@ let list=[], page=0, activeIdx=-1, curCat=null; const previewCache={};
 function jsonp(url){return new Promise((res,rej)=>{const cb='cb'+Math.random().toString(36).slice(2);const s=document.createElement('script');
   const to=setTimeout(()=>{rej('timeout');s.remove()},8000);
   window[cb]=d=>{clearTimeout(to);res(d);delete window[cb];s.remove()}; s.onerror=()=>{clearTimeout(to);rej();s.remove()}; s.src=url+'&callback='+cb; document.body.appendChild(s);});}
+const PLATS=[
+  ['am','Apple Music','#FA2D48','<svg viewBox="0 0 16 16" fill="#fff"><path d="M11.5 2v8.2a2.1 2.1 0 1 1-1.2-1.9V4.6L6.2 5.5v6.1a2.1 2.1 0 1 1-1.2-1.9V3.4z"/></svg>'],
+  ['sp','Spotify','#1DB954','<svg viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-linecap="round"><path d="M3.2 6c3.2-1 6.6-.7 9.6.9" stroke-width="1.6"/><path d="M3.8 8.6c2.6-.8 5.3-.5 7.8.8" stroke-width="1.4"/><path d="M4.4 11c2-.6 4.1-.4 6 .6" stroke-width="1.2"/></svg>'],
+  ['yt','YouTube Music','#FF0033','<svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="5.2" fill="none" stroke="#fff" stroke-width="1.2"/><path d="M6.6 5.6v4.8L10.6 8z" fill="#fff"/></svg>'],
+  ['ne','NetEase Cloud Music','#E60026','<svg viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="1.4" stroke-linecap="round"><path d="M9.2 2.6c-.9-.3-2 .1-2 1.3l1.3 5.2"/><path d="M6.4 5.2a4 4 0 1 0 5.2 2.1"/><circle cx="8" cy="9" r="1.6"/></svg>'],
+  ['qq','QQ Music','#31C27C','<svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="5.4" fill="#FFDA3F"/><path d="M9.4 4.2v5.3a1.6 1.6 0 1 1-1-1.5V4.2c1 .2 1.8.7 2.4 1.5" fill="none" stroke="#31C27C" stroke-width="1.2"/></svg>']
+];
+function platIcons(L){ return PLATS.filter(p=>L[p[0]]).map(([k,n,col,svg])=>`<a class="ic" href="${L[k]}" target="_blank" rel="noopener" title="${n}" aria-label="Open in ${n}" style="background:${col}">${svg}</a>`).join(''); }
 async function lookup(title){
   if(previewCache[title]) return previewCache[title];
-  const artist=LINKS[title]?.[0]||'';
-  try{const d=await jsonp(`https://itunes.apple.com/search?media=music&entity=song&limit=10&term=${encodeURIComponent(title+' '+artist)}`);
+  const L=LINKS[title]||{}, artist=L.a||'';
+  try{ if(L.amid){ const d=await jsonp(`https://itunes.apple.com/lookup?id=${L.amid}&country=${L.amc||'us'}`); const hit=d.results.find(r=>r.previewUrl);
+      if(hit) return previewCache[title]={url:hit.previewUrl,art:hit.artworkUrl100.replace('100x100','400x400')}; } }catch(e){}
+  try{ if(L.am){ const d=await jsonp(`https://itunes.apple.com/search?media=music&entity=song&limit=10&term=${encodeURIComponent(title+' '+artist)}`);
     const first=artist.toLowerCase().split(' ')[0];
-    const hit=d.results.find(r=>r.previewUrl&&r.artistName.toLowerCase().includes(first)&&r.trackName.toLowerCase().includes(title.toLowerCase().slice(0,5)))||d.results.find(r=>r.previewUrl);
-    if(hit) return previewCache[title]={url:hit.previewUrl,art:hit.artworkUrl100.replace('100x100','400x400')};
-  }catch(e){}
+    const hit=d.results.find(r=>r.previewUrl&&r.artistName.toLowerCase().includes(first)&&r.trackName.toLowerCase().includes(title.toLowerCase().slice(0,5)));
+    if(hit) return previewCache[title]={url:hit.previewUrl,art:hit.artworkUrl100.replace('100x100','400x400')}; } }catch(e){}
+  if(L.neid) return previewCache[title]={url:`https://music.163.com/song/media/outer/url?id=${L.neid}.mp3`,art:null};
   return null;
 }
 function renderSongs(c){
   curCat=c; const sec=$('#songs'); sec.style.setProperty('--theme',themeOf(c));
-  list=CATS[c].tracks; page=0; activeIdx=-1;
+  const tgt=cur?.S?targetEnergy(cur.S):2.5; list=[...CATS[c].tracks].sort((x,y)=>Math.abs(LINKS[x].e-tgt)-Math.abs(LINKS[y].e-tgt)); page=0; activeIdx=-1;
   $('#songKicker').textContent=c; $('#songSub').textContent=[c,cur.S.S01,cur.S.S02].join(' · ');
   resetDeck(); $('#bars').innerHTML='<i></i>'.repeat(32);
   drawTracks(); go('songs'); Snd.pad(c==='Silence'?null:CATS[c].chord,{quiet:true});
@@ -714,10 +758,10 @@ function resetDeck(){ vinyl($('#deckStage'),{label:curCat,ring:true}); $('#deckS
 const PLAY='<svg viewBox="0 0 12 12"><path d="M3 1.5v9l7.5-4.5z"/></svg>', PAUSE='<svg viewBox="0 0 12 12"><path d="M2.5 1.5h2.5v9H2.5zM7 1.5h2.5v9H7z"/></svg>';
 function drawTracks(){
   const start=page*3;
-  $('#tracks').innerHTML=list.slice(start,start+3).map((t,j)=>{const i=start+j, L=LINKS[t]||[];return `<div class="track${i===activeIdx?' active':''}" data-i="${i}">
+  $('#tracks').innerHTML=list.slice(start,start+3).map((t,j)=>{const i=start+j, L=LINKS[t]||{};return `<div class="track${i===activeIdx?' active':''}" data-i="${i}">
     <span class="n">${String(i+1).padStart(2,'0')}</span><button class="pb" aria-label="Play preview of ${t}">${i===activeIdx&&!audio.paused?PAUSE:PLAY}</button>
-    <div class="tt"><b>${t}</b><span>${L[0]||''}</span></div><span class="prev">30s preview</span>
-    <div class="plat"><a href="${L[1]}" target="_blank" rel="noopener">Apple Music</a><a href="${L[2]}" target="_blank" rel="noopener">Spotify</a><a href="${L[3]}" target="_blank" rel="noopener">YouTube Music</a></div></div>`}).join('');
+    <div class="tt"><b>${t}</b><span>${L.a||''}</span></div><span class="prev">30s preview</span>
+    <div class="plat">${platIcons(L)}</div></div>`}).join('');
   $$('#tracks .pb').forEach(b=>b.onclick=()=>toggle(+b.closest('.track').dataset.i));
   const pages=Math.ceil(list.length/3); $('#moreBtn').style.display=pages>1?'flex':'none'; $('#pageLbl').textContent=`${page+1} / ${pages}`;
 }
@@ -726,7 +770,7 @@ async function toggle(i){
   if(i===activeIdx&&!audio.paused){audio.pause();return;}
   if(i===activeIdx&&audio.src){audio.play();return;}
   stopAudio(); activeIdx=i; const t=list[i];
-  $('#nowTitle').textContent=t; $('#nowArtist').textContent=LINKS[t]?.[0]||''; $('#nowState').textContent='Loading'; drawTracks();
+  $('#nowTitle').textContent=t; $('#nowArtist').textContent=LINKS[t]?.a||''; $('#nowState').textContent='Loading'; drawTracks();
   const p=await lookup(t); if(activeIdx!==i) return;
   if(!p){$('#nowState').textContent='Preview unavailable';return;}
   vinyl($('#deckStage'),{label:curCat,art:p.art,ring:true});
@@ -740,6 +784,7 @@ audio.addEventListener('pause',()=>{$('#deckStage').classList.remove('playing');
 audio.addEventListener('timeupdate',()=>{const p=Math.min(1,audio.currentTime/30);$('#miniBar').style.width=p*100+'%';
   const rp=$('#deckStage .rp'); if(rp) rp.style.strokeDashoffset=301.6*(1-p); if(audio.currentTime>=30) audio.pause();});
 audio.addEventListener('ended',()=>stopAudio());
+audio.addEventListener('error',()=>{ if(audio.src&&activeIdx>=0){ $('#nowState').textContent='Preview unavailable — open it in an app'; $('#deckStage').classList.remove('playing'); } });
 /* spectrum: beat-synced simulation (cross-origin previews can't be analysed) */
 (function bars(){
   const playing=!audio.paused&&!!audio.src, bpm=CATS[curCat]?.bpm||70, t=performance.now()/1000, beat=Math.pow(Math.max(0,Math.cos(Math.PI*t*bpm/60)),6);
