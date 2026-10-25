@@ -26,7 +26,7 @@ a{color:inherit}
 h1,h2{font-family:var(--display);letter-spacing:-.01em;font-weight:600}
 
 /* NAV */
-nav{height:64px;max-width:1200px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+nav{height:64px;max-width:1360px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
 .logo{display:flex;align-items:center;gap:10px;font:600 18px var(--display);letter-spacing:-.01em}
 .logo svg{display:block}
 .links{display:flex;gap:28px;font-size:14px;color:var(--muted)}
@@ -34,7 +34,7 @@ nav{height:64px;max-width:1200px;margin:0 auto;padding:0 32px;display:flex;align
 .links button:hover{color:var(--ink)}
 
 /* LAYOUT */
-main{max-width:1200px;margin:0 auto;padding:0 32px;min-height:calc(100vh - 64px);perspective:1600px}
+main{max-width:1360px;margin:0 auto;padding:0 32px;min-height:calc(100vh - 64px);perspective:1600px}
 .screen{display:none;min-height:calc(100vh - 64px);padding:32px 0 28px;animation:fade .45s ease}
 .screen.on{display:flex;flex-direction:column}
 .screen.flip{animation:flip .6s cubic-bezier(.6,0,.3,1)}
@@ -59,7 +59,7 @@ main{max-width:1200px;margin:0 auto;padding:0 32px;min-height:calc(100vh - 64px)
 .hero p{margin:24px 0 36px;font-size:18px;color:var(--muted);max-width:440px}
 .hero .meta{margin-top:20px;font-size:13px;color:var(--muted)}
 .heroart{position:relative;height:520px}
-.heroart .stage{position:absolute;right:20px;top:50%;transform:translateY(-50%);width:380px;height:380px}
+.heroart .stage{position:absolute;right:72px;top:50%;transform:translateY(-50%);width:380px;height:380px}
 .flowstaff{position:absolute;left:-40px;right:120px;top:50%;height:110px;transform:translateY(-50%);overflow:hidden;-webkit-mask:linear-gradient(90deg,transparent,#000 15%,#000 85%,transparent)}
 .flowstaff svg{position:absolute;left:0;top:0;height:110px;animation:drift 18s linear infinite}
 @keyframes drift{from{transform:translateX(0)}to{transform:translateX(-600px)}}
@@ -231,6 +231,7 @@ main{max-width:1200px;margin:0 auto;padding:0 32px;min-height:calc(100vh - 64px)
   .songgrid>*{min-width:0}
 }
 @media (max-width:520px){
+  nav,main{padding-left:16px;padding-right:16px}.deck{padding:24px 20px 20px}.card{padding:24px}
   .hero h1{font-size:34px}
   .narrow,.prose{padding-left:0;padding-right:0}
   .pill{height:34px;padding:0 12px;font-size:13px}
